@@ -14,7 +14,7 @@
   <table class="table table-sm">
     <tbody>
       <tr v-for="info in infodata" v-if="new Date(info.datum) > yesterday" v-bind:class="{ 'table-primary': isEven(info.vecka) , 'table-secondary': !isEven(info.vecka)}" class=""> 
-        <td><b>Vecka {{ info.vecka }}</b></td>
+        <td><b>V.{{ info.vecka }}</b></td>
         <td><b>{{ dagar[info.dag] }}</b><br>{{ info.datum }}</td>
         <td>{{ info.prov }}<br>
         {{ info.mentor }}<br>
