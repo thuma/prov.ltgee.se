@@ -28,7 +28,12 @@
 <body style="background-color:#871262">
 <div id="prov" class="container">
   <h1 class="text-light">ProvSchema EE20D</h1>
-  <input id="link" value="https://script.google.com/a/educ.goteborg.se/macros/s/AKfycbwmVvNjP3ITVrN6i1dSbCoMmM3-JUnWrafi9l6ZH-c/dev?format=ics&klass=EE20D"><button v-on:click="kopiera()" class="btn btn-sm btn-" type="button">
+  <div class="input-group mb-3">
+    <input type="text" id="link" class="form-control form-control-sm" value="https://script.google.com/a/educ.goteborg.se/macros/s/AKfycbwmVvNjP3ITVrN6i1dSbCoMmM3-JUnWrafi9l6ZH-c/dev?format=ics&amp;klass=EE20D">
+    <div class="input-group-append">
+      <button type="button" class="btn btn-sm btn-secondary">Kopiera kalender länk</button>
+    </div>
+  </div>
   <table class="table table-sm">
     <tbody>
       <tr v-for="info in infodata" v-if="new Date(info.datum) > yesterday" v-bind:class="{ 'table-primary': isEven(info.vecka) , 'table-secondary': !isEven(info.vecka)}" class=""> 
