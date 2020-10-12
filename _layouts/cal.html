@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ProvSchema LTG EE</title>
+<title>ProvSchema LTG EE {{ page.title }}</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<script src="https://script.google.com/macros/s/AKfycbwWxKMY1AeiCGjF_vMdxg8Scv8V-_kTJ-v827BL1LshjyhxxDc/exec?klass=EE20D"></script>
+<script src="https://script.google.com/macros/s/AKfycbwWxKMY1AeiCGjF_vMdxg8Scv8V-_kTJ-v827BL1LshjyhxxDc/exec?klass={{ page.title }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -20,16 +20,17 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest-ee20d.json">
+<link rel="manifest" href="/manifest.json">
 <meta name="msapplication-TileColor" content="#871262">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#871262">
 </head>
 <body style="background-color:#871262">
+{% raw %}
 <div id="prov" class="container">
-  <h1 class="text-light">ProvSchema EE20D</h1>
+  <h1 class="text-light">ProvSchema {{ klass }}</h1>
   <div class="input-group mb-3">
-    <input type="text" id="link" class="form-control form-control-sm" value="https://script.google.com/a/educ.goteborg.se/macros/s/AKfycbwmVvNjP3ITVrN6i1dSbCoMmM3-JUnWrafi9l6ZH-c/dev?format=ics&amp;klass=EE20D">
+    <input type="text" id="link" class="form-control form-control-sm" v-bind:value="'https://script.google.com/a/educ.goteborg.se/macros/s/AKfycbwmVvNjP3ITVrN6i1dSbCoMmM3-JUnWrafi9l6ZH-c/dev?format=ics&amp;klass='+klass">
     <div class="input-group-append">
       <button type="button" class="btn btn-sm btn-secondary" v-on:click="kopiera">Kopiera kallender-länk</button>
     </div>
@@ -47,6 +48,7 @@
     </tbody>
   </table>
 </div>
+{% endraw %}
 </body>
 <script>
 var d = new Date();
@@ -65,6 +67,7 @@ var cleanlist = new Vue({
     }
   },
   data: {
+    klass: "{{ page.title }}",
     yesterday: d,
     dagar: ["Söndag","Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lördag"],
     infodata: window.infodata

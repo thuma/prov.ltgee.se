@@ -1,7 +1,6 @@
 {
  "name": "ProvSchema",
  "short_name": "ProvSchema",
- "start_url": ".",
  "display": "standalone",
  "background_color": "#871262",
  "description": "ProvSchema för Elprogrammet på Lindholmens Tekniska Gymnasium",

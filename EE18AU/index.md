@@ -1,4 +1,4 @@
 ---
 layout: cal
-title: ee18elb
+title: EE18ELB
 ---
