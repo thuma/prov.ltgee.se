@@ -41,9 +41,9 @@
         <td><b>V.{{ info.vecka }}</b></td>
         <td><b>{{ dagar[info.dag] }}</b><br><span class="font-weight-light" style="font-size: 80%;">{{ info.datum }}</span></td>
         <td>
-        {% for provtext in (info.prov | split:"\n") %}
-        * {{ provtext }} <br>
-        {% endfor %}  
+        <div v-for="provtext in info.prov.split('\n')">
+        * {{ provtext }}
+        </div>
         {{ info.mentor }}<br>
         {{ info.rektor }}
         </td>
